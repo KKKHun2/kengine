@@ -138,12 +138,13 @@ const Styled = styled.div`
   display: flex;
   flex-direction: column; /* 기본적으로 모바일에서 세로로 배치되도록 설정 */
   align-items: center; /* 가운데 정렬 */
-  margin-top: 30px;
+
   width: 100%;
-  @media (min-width: 768px) {
+  @media (min-width: 844px) {
     flex-direction: row; /* 화면 너비가 768px 이상일 때 가로로 배치되도록 변경 */
     justify-content: center; /* 가로 정렬 */
     align-items: center; /* 가운데 정렬 */
+    margin-top: 30px;
   }
 `;
 const StyledButton = styled.button`
@@ -159,17 +160,14 @@ const StyledButton = styled.button`
   font-size: 16px;
   font-weight: 600;
   color: #6354bb;
-  cursor:pointer;
-  margin-bottom: 20px;
-  @media (max-width > 844px) {
-    margin-right: 100px;
-  }
+  cursor: pointer;
+  margin: 25px auto; /* 수직, 수평 가운데 정렬을 위해 수정 */
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
-  
 `;
+
 
 const Side4: React.FC = () => {
   return (

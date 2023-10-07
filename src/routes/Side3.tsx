@@ -55,15 +55,47 @@ const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   color: ${props => props.theme.color.text};
+  margin-top: 20px; /* 추가된 부분 */
+  margin: 0 auto;
+  
+`;
 
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
+const TableHeader = styled.th`
+  background-color: ${props => props.theme.color.header};
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+`;
+
+const TableRow = styled.tr`
+  background-color: ${props => props.theme.color.neutral};
+  &:nth-child(odd) {
+    background-color: ${props => props.theme.color.background};
   }
+`;
 
-  th {
-    background-color: ${props => props.theme.color.header};
+const TableCell = styled.td`
+  border: 1px solid #ccc;
+  padding: 25px;
+
+  text-align: center;
+`;
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: #fff;
+  background-color: #6354bb;
+  border: 3px solid #6354bb;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  &:hover {
+    background-color: ${props => props.theme.color.background};
+    color: #8f88d7;
   }
 `;
 
@@ -81,59 +113,59 @@ const Side3: React.FC = () => {
             <Title>행사내용</Title>
             <Table>
               <thead>
-                <tr>
-                  <th>순서</th>
-                  <th>시간</th>
-                  <th>발언자</th>
-                  <th>진행내용</th>
-                </tr>
+                <TableRow>
+                  <TableHeader>순서</TableHeader>
+                  <TableHeader>시간</TableHeader>
+                  <TableHeader>발언자</TableHeader>
+                  <TableHeader>진행내용</TableHeader>
+                </TableRow>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>14:00</td>
-                  <td>&nbsp;</td>
-                  <td>개회</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>14:00</td>
-                  <td>사회자</td>
-                  <td>참가자 및 회사 소개</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>14:05</td>
-                  <td>변리사</td>
-                  <td>K엔진 특허 현황</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>14:10</td>
-                  <td>법률고문 전병서</td>
-                  <td> K엔진 데이터</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>14:15</td>
-                  <td>대표이사 박종배</td>
-                  <td>K엔진 기술</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>14:20</td>
-                  <td>&nbsp;</td>
-                  <td>질의응답</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>15:00</td>
-                  <td>&nbsp;</td>
-                  <td>폐회</td>
-                </tr>
+                <TableRow>
+                  <TableCell>1</TableCell>
+                  <TableCell>14:00</TableCell>
+                  <TableCell>&nbsp;</TableCell>
+                  <TableCell>개회</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2</TableCell>
+                  <TableCell>14:00</TableCell>
+                  <TableCell>사회자</TableCell>
+                  <TableCell>참가자 및 회사 소개</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>3</TableCell>
+                  <TableCell>14:05</TableCell>
+                  <TableCell>변리사</TableCell>
+                  <TableCell>K엔진 특허 현황</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>4</TableCell>
+                  <TableCell>14:10</TableCell>
+                  <TableCell>법률고문 전병서</TableCell>
+                  <TableCell>K엔진 데이터</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>5</TableCell>
+                  <TableCell>14:15</TableCell>
+                  <TableCell>대표이사 박종배</TableCell>
+                  <TableCell>K엔진 기술</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>6</TableCell>
+                  <TableCell>14:20</TableCell>
+                  <TableCell>&nbsp;</TableCell>
+                  <TableCell>질의응답</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>7</TableCell>
+                  <TableCell>15:00</TableCell>
+                  <TableCell>&nbsp;</TableCell>
+                  <TableCell>폐회</TableCell>
+                </TableRow>
               </tbody>
             </Table>
-            <div className="engin_btn"><a href="./Kengine_whitepaper.pdf" target="_blank">K엔진 백서 다운로드</a></div>
+            <StyledLink href="./Kengine_whitepaper.pdf" target="_blank">K엔진 백서 다운로드</StyledLink>
           </PageSection>
         </Container>
       </Overlay>
