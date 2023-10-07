@@ -51,7 +51,7 @@ const Paragraph = styled.p`
   line-height: 1.6;
   margin-bottom: 1.5rem;
   margin-top:1rem;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
 `;
 
