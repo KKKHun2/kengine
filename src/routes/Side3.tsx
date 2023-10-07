@@ -57,14 +57,14 @@ const Table = styled.table`
   color: ${props => props.theme.color.text};
   margin-top: 20px; /* 추가된 부분 */
   margin: 0 auto;
-  
 `;
 
 const TableHeader = styled.th`
   background-color: ${props => props.theme.color.header};
   border: 1px solid #ccc;
-  padding: 12px;
+  padding: 15px;
   text-align: center;
+
 `;
 
 const TableRow = styled.tr`

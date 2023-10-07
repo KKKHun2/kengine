@@ -116,9 +116,8 @@ const Side5: React.FC = () => {
       </Paragraph>
             </PageSection>
             <PageSection>
-              <Title>K엔진의 구체적 작동방식
+              <Title>K엔진의 구체적 작동방식 </Title>
               <PDFButton href="./pdf/Kengine_whitepaper.pdf" target="_blank">K엔진 백서 다운로드</PDFButton>
-              </Title>
               <Image src="/image/image1.png" alt="Image" />
             </PageSection>
         </Container>
