@@ -11,7 +11,7 @@ const Overlay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin-top:30px;
   width: 100%; 
   box-sizing: border-box; 
 `;
