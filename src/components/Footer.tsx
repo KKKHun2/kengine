@@ -6,11 +6,11 @@ const FooterWrapper = styled.div`
   color: ${(props) => props.theme.color.text};
   padding: 20px 0;
   text-align: center;
+  width: 100%;
 `;
 
 const Container = styled.div`
   max-width: 960px;
-  max-height: 15vh; 
   margin: 0 auto;
   padding: 0 10px;
   display: flex;
@@ -28,13 +28,13 @@ const TextContainer = styled.div`
   flex: 1;
   text-align: left;
   font-size: 0.8rem;
-  line-height: 1.1rem;
+  line-height: 1rem;
   flex-shrink: 0; /* 화면이 작아져도 줄어들지 않도록 고정합니다. */
   margin-left:30px;
 
   @media (max-width: 844px) {
     text-align: center; /* 화면이 작아지면 텍스트 중앙 정렬합니다. */
-    font-size: 0.8rem; /* 글꼴 크기를 줄입니다. */
+    font-size: 0.6rem; /* 글꼴 크기를 줄입니다. */
   }
 `;
 
@@ -45,6 +45,7 @@ const TextColumn = styled.div`
   margin-left: 20px;
   @media (max-width: 844px) {
     align-items: center; /* 화면이 작아지면 텍스트 중앙 정렬합니다. */
+    
   }
 `;
 
@@ -55,8 +56,6 @@ const StyledLink = styled.a`
   color: ${(props) => props.theme.color.text};
   border-radius: 5px;
   transition: background-color 0.2s ease, color 0.2s ease;
-  margin-right:-100px;
-  width: 20%;
   font-size: 0.8rem; /* 글꼴 크기를 줄였습니다. */
   font-weight: 400;
   &:hover {
@@ -67,15 +66,16 @@ const StyledLink = styled.a`
     display: none; 
   }
 `;
+
 const Logo = styled.div`
   text-decoration: none;
-  font-size: 18px; /* 로고의 글꼴 크기를 줄였습니다. */
+  font-size: 18px; 
   font-weight: bold;
-  margin-bottom: 10px; /* 로고와 텍스트 사이의 간격을 줄였습니다. */
-  margin-right: 100px;
+  margin-bottom: 10px; 
+  margin-right: 20px; 
   @media (max-width: 844px) {
-    display: flex;
-    margin-left: 0;
+    margin-right: 0; 
+    margin-bottom: 5px; 
   }
 `;
 

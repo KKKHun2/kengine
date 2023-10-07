@@ -143,6 +143,7 @@ const Styled = styled.div`
   @media (min-width: 768px) {
     flex-direction: row; /* 화면 너비가 768px 이상일 때 가로로 배치되도록 변경 */
     justify-content: center; /* 가로 정렬 */
+    align-items: center; /* 가운데 정렬 */
   }
 `;
 const StyledButton = styled.button`
@@ -159,8 +160,10 @@ const StyledButton = styled.button`
   font-weight: 600;
   color: #6354bb;
   cursor:pointer;
-  margin-right: 100px;
   margin-bottom: 20px;
+  @media (max-width > 844px) {
+    margin-right: 100px;
+  }
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;

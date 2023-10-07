@@ -37,8 +37,8 @@ const MenuItems = styled.ul`
 `;
 
 const MenuItem = styled.li`
-  margin-top:35px;
-  font-size: 20px;
+  margin-top:28px;
+  font-size: 17px;
   font-weight: bold;
   text-decoration: none;
   color: ${(props) => props.theme.color.text};

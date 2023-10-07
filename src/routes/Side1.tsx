@@ -28,7 +28,7 @@ const Container = styled.div`
   margin-bottom: 20px;
   box-sizing: border-box; 
 
-  @media (max-width: 768px) {
+  @media (max-width: 844px) {
     width: 90%;
   }
 `;
@@ -40,7 +40,7 @@ const Title = styled.h1`
   font-size: 24px;
   font-weight: bold;
   text-align: left;
-  margin: 20px 0px 20px 0;
+  margin: 20px 0px 20px 0; 
   @media (max-width: 844px) {
     text-align: center;
   }
@@ -67,16 +67,23 @@ const PDFButton = styled.a`
   font-size: 11px;
   color: ${props => props.theme.color.text};
   padding: 10px 10px;
-  background-color: #8f88d7;
+  background-color: ${props => props.theme.color.header};
   border: none;
   border-radius: 10px;
-  margin-left: 30px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+
+  @media (max-width: 844px) {
+    display: flex; 
+    margin: 10px 0px; 
+    width: fit-content;
+  }
+
   &:hover {
-    background-color: ${props => props.theme.color.header};
+    color: #6354bb;
   }
 `;
+
 const Side1: React.FC = () => {
   return (
     <>
@@ -104,9 +111,8 @@ const Side1: React.FC = () => {
       </Paragraph>
             </PageSection>
             <PageSection>
-              <Title>K엔진의 구체적 작동방식
+              <Title>K엔진의 구체적 작동방식</Title>
               <PDFButton href="./pdf/Kengine_whitepaper.pdf" target="_blank">K엔진 백서 다운로드</PDFButton>
-              </Title>
               <Image src="/image/image1.png" alt="Image" />
             </PageSection>
         </Container>
