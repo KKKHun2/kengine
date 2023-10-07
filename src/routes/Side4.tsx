@@ -139,7 +139,7 @@ const Styled = styled.div`
   flex-direction: column; /* 기본적으로 모바일에서 세로로 배치되도록 설정 */
   align-items: center; /* 가운데 정렬 */
   margin-top: 30px;
-
+  width: 100%;
   @media (min-width: 768px) {
     flex-direction: row; /* 화면 너비가 768px 이상일 때 가로로 배치되도록 변경 */
     justify-content: center; /* 가로 정렬 */
