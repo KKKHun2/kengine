@@ -30,11 +30,11 @@ const TextContainer = styled.div`
   font-size: 0.8rem;
   line-height: 1rem;
   flex-shrink: 0; /* 화면이 작아져도 줄어들지 않도록 고정합니다. */
-  margin-left:30px;
-
+  margin-left:100px;
   @media (max-width: 844px) {
     text-align: center; /* 화면이 작아지면 텍스트 중앙 정렬합니다. */
     font-size: 0.6rem; /* 글꼴 크기를 줄입니다. */
+    margin-left:0px;
   }
 `;
 

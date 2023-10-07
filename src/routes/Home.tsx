@@ -13,16 +13,15 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1600px;
   width:100%;
 `;
 
 const MainVideo = styled.div`
-  margin-top: 50px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  padding-top: 80%;
+  padding-top: 65%;
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -35,7 +34,7 @@ const MainVideo = styled.div`
     height: 100%;
   }
   @media (max-width: 844px) {
-    padding-top: 120%;
+    padding-top: 130%;
     margin-top: 50px; 
     margin-bottom: 0px;
   }
