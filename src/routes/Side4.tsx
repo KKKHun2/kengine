@@ -135,10 +135,16 @@ const Image = styled.img`
 `;
 
 const Styled = styled.div`
-display: flex;
-flex-direction: row;
-margin-top:30px;
-`
+  display: flex;
+  flex-direction: column; /* 기본적으로 모바일에서 세로로 배치되도록 설정 */
+  align-items: center; /* 가운데 정렬 */
+  margin-top: 30px;
+
+  @media (min-width: 768px) {
+    flex-direction: row; /* 화면 너비가 768px 이상일 때 가로로 배치되도록 변경 */
+    justify-content: center; /* 가로 정렬 */
+  }
+`;
 const StyledButton = styled.button`
   display: flex;
   align-items: center;
@@ -154,10 +160,12 @@ const StyledButton = styled.button`
   color: #6354bb;
   cursor:pointer;
   margin-right: 100px;
+  margin-bottom: 20px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
+  
 `;
 
 const Side4: React.FC = () => {

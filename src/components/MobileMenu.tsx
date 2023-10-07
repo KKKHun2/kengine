@@ -43,6 +43,7 @@ const MenuItem = styled.li`
   text-decoration: none;
   color: ${(props) => props.theme.color.text};
   width:100%;
+  padding:10px;
   border-top: 2px solid #fff; /* 상단 테두리 추가 */
   border-bottom: 2px solid #fff; /* 하단 테두리 추가 */
   &:hover {

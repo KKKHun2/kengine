@@ -36,8 +36,10 @@ const Logo = styled(Link)`
     display: block;
     padding-left: 70px;
     margin-bottom: 10px;
+    &:hover {
+      color: ${props => props.theme.color.text};
+    }
   }
-
   &:hover {
     color: #8f88d7;
   }
