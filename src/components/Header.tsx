@@ -18,10 +18,26 @@ const HeaderWrapper = styled(motion.nav)`
   height: 4.3rem;
   top: 0;
   font-size: 14px;
-  padding: 15px 30px;
+
   background-color: ${props => props.theme.color.header};
   color: ${props => props.theme.color.text};
   z-index: 100;
+`;
+
+const LogoBox = styled.div`
+ margin-right: 100px;
+ @media (max-width: 900px) {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width:100vw;
+    font-size:30px;
+    padding-left: 50px;
+    margin-bottom: 5px;
+    &:hover {
+      color: ${props => props.theme.color.text};
+    };
+  };
 `;
 
 const Logo = styled(Link)`
@@ -29,17 +45,6 @@ const Logo = styled(Link)`
   font-size: 24px;
   font-weight: bold;
   color: ${props => props.theme.color.text};
-  margin-left: -20px;
-  @media (max-width: 900px) {
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-    padding-left: 70px;
-    margin-bottom: 10px;
-    &:hover {
-      color: ${props => props.theme.color.text};
-    }
-  }
   &:hover {
     color: #8f88d7;
   }
@@ -49,8 +54,10 @@ const Nav = styled.ul`
   list-style: none;
   padding: 0;
   display: flex;
-  align-items: center;
   margin: 0;
+  align-items: center;
+  margin-left:60px;
+  width: 50%;
   @media (max-width: 900px) {
     display: none;
   }
@@ -60,9 +67,9 @@ const NavItem = styled.li`
   margin-right: 40px;
   text-decoration: none;
   color: ${props => props.theme.color.text};
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
-   margin-right: 20px;
+   margin-right: 40px;
   color: ${props => props.theme.color.text};;
   transition: color 0.3s ease-in-out;
   position: relative;
@@ -75,31 +82,6 @@ const NavItem = styled.li`
   }
   &:hover {
     color: #8f88d7;
-  }
-`;
-
-const ExternalLink = styled.a`
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  color: ${props => props.theme.color.text};
-  padding: 10px 20px;
-  margin-right: 1rem;
-  cursor: pointer;
-  background-color: #6354bb;
-  border: 3px solid #6354bb;
-  border-radius: 8px;
-  &:hover {
-    background-color: ${props => props.theme.color.background};
-    color: #8f88d7;
-  }
-  transition: background-color 0.2s, color 0.2s;
-  &:hover {
-    background-color: ${props => props.theme.color.background};
-    color: #8f88d7;
-  }
-  @media (max-width: 900px) {
-    display: none;
   }
 `;
 
@@ -119,12 +101,14 @@ const DarkModeButton = styled.button`
   right: 20px;
   top: 50%;
   font-size: 12px;
+  margin-right:20px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
   @media (max-width: 900px) {
-    margin-left: 70px;
+    margin-left: 50px;
+    margin-right:50px;
     width: 2.8rem;
     height: 2.8rem;
     font-size: 13px;
@@ -188,11 +172,10 @@ const Header: React.FC = () => {
     <>
       <HeaderWrapper>
         <MobileMenu />
-        <Logo to="/">KENGINE</Logo>
+        <LogoBox>
+          <Logo to="/">KENGINE</Logo>
+        </LogoBox>
         <HeaderNav />
-        <ExternalLink href="http://kengine.filmasfilm.com/" target="_blank" rel="noreferrer">
-          kengine OS 채팅웹
-        </ExternalLink>
         <DarkModeButton onClick={handleChangeDarkMode}>
           {isDark ? 'DARK' : 'LIGHT'}
         </DarkModeButton>

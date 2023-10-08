@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
-margin-left :30px;
-margin-right: 10px;
+  margin-left :80px;
+  margin-right: 10px;
 `;
 
 const MenuIcon = styled.div`
   display: none;
   cursor: pointer;
-  font-size: 34px;
-  margin-right: -30px;
-
+  font-size: 50px;
+  &:hover {
+    color: #8f88d7;
+  }
   @media (max-width: 900px) {
     display: block;
     margin-left: -30px;
@@ -99,29 +100,7 @@ const CloseButton = styled.button`
   }
 `;
 
-const ExternalLink = styled.a`
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  color: ${props => props.theme.color.text};
-  padding: 10px 20px;
-  margin-right: 1rem;
-  margin-top:3rem;
-  cursor: pointer;
-  background-color: #6354bb;
-  border: 3px solid #6354bb;
-  border-radius: 8px;
-  &:hover {
-    background-color: ${props => props.theme.color.background};
-    color: #8f88d7;
-  }
-  transition: background-color 0.2s, color 0.2s;
-  &:hover {
-    background-color: ${props => props.theme.color.background};
-    color: #8f88d7;
-  }
 
-`;
 
 const MobileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -165,9 +144,6 @@ const MobileMenu = () => {
         <ModalContent className={isMenuOpen ? 'open' : ''}>
           <CloseButton onClick={closeMenu}>&times;</CloseButton>
           <MenuItems>
-          <ExternalLink href="http://kengine.filmasfilm.com/" target="_blank" rel="noreferrer">
-                 Kengine OS 채팅웹으로 바로가기
-              </ExternalLink>
             <MenuItem>
               <Link to="/side1">K엔진의 원리</Link>
             </MenuItem>
@@ -183,10 +159,7 @@ const MobileMenu = () => {
             <MenuItem>
               <Link to="/side4">국제입찰</Link>
             </MenuItem>
-  
-              
-  
-          </MenuItems>
+            </MenuItems>
         </ModalContent>
       </ModalContainer>
     </>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import KengineOs from '../components/KengineOs';
 import VideoPlayer from '../components/VideoPlayer';
 
 
@@ -21,7 +22,7 @@ const MainVideo = styled.div`
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  padding-top: 65%;
+  padding-top: 58%;
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -33,10 +34,10 @@ const MainVideo = styled.div`
     width: 100%;
     height: 100%;
   }
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     padding-top: 130%;
     margin-top: 50px; 
-    margin-bottom: 0px;
+    margin-bottom: 50px;
   }
  
 `;
@@ -45,6 +46,7 @@ const Home: React.FC = () => {
   return (
     <Wrapper>
       <Container>
+      <KengineOs />
         <MainVideo>
           <VideoPlayer />
         </MainVideo>

@@ -14,7 +14,7 @@ const Overlay = styled.div`
   width: 100%; /* 화면 가로 너비를 100%로 설정 */
   box-sizing: border-box; /* padding과 border를 요소의 크기에 포함시킵니다. */
   @media (max-width: 900px) {
-    margin-top:-15px;
+    margin-top:50px;
   }
 `;
 

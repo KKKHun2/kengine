@@ -30,7 +30,7 @@ const Container = styled.div`
   padding-bottom: 20%;
   @media (max-width: 900px) {
     width: 100%; 
-    margin-top:105px;
+
   }
   
 `;
