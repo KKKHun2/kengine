@@ -102,7 +102,7 @@ const CloseButton = styled.button`
 const ExternalLink = styled.a`
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   color: ${props => props.theme.color.text};
   padding: 10px 20px;
   margin-right: 1rem;
@@ -166,7 +166,7 @@ const MobileMenu = () => {
           <CloseButton onClick={closeMenu}>&times;</CloseButton>
           <MenuItems>
           <ExternalLink href="http://kengine.filmasfilm.com/" target="_blank" rel="noreferrer">
-                 kengine OS 채팅웹으로 바로가기
+                 Kengine OS 채팅웹으로 바로가기
               </ExternalLink>
             <MenuItem>
               <Link to="/side1">K엔진의 원리</Link>
