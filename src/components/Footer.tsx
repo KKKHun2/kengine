@@ -45,7 +45,8 @@ const TextColumn = styled.div`
   margin-left: 20px;
   @media (max-width: 900px) {
     align-items: center; 
-    
+    text-align:left;
+    margin-left:30px;
   }
 `;
 

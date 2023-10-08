@@ -15,7 +15,7 @@ const HeaderWrapper = styled(motion.nav)`
   align-items: center;
   position: fixed;
   width: 100%;
-  height: 4.3rem;
+  height: 4rem;
   top: 0;
   font-size: 14px;
 
@@ -56,7 +56,7 @@ const Nav = styled.ul`
   display: flex;
   margin: 0;
   align-items: center;
-  margin-left:60px;
+  margin-left:10px;
   width: 50%;
   @media (max-width: 900px) {
     display: none;
@@ -64,10 +64,9 @@ const Nav = styled.ul`
 `;
 
 const NavItem = styled.li`
-  margin-right: 40px;
   text-decoration: none;
   color: ${props => props.theme.color.text};
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
    margin-right: 40px;
   color: ${props => props.theme.color.text};;
@@ -97,11 +96,11 @@ const DarkModeButton = styled.button`
   align-items: center;
   justify-content: center;
   width: 3rem;
-  height: 3rem;
+  height: 3.1rem;
   right: 20px;
   top: 50%;
   font-size: 12px;
-  margin-right:20px;
+  margin-right:60px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;

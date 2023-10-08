@@ -1,17 +1,12 @@
-
-
-
-
-import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
 const Contatiner = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
 `
 const ExternalLink = styled(Link)`
   text-decoration: none;

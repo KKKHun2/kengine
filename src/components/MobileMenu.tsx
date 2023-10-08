@@ -10,14 +10,14 @@ const Container = styled.div`
 const MenuIcon = styled.div`
   display: none;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 40px;
   &:hover {
     color: #8f88d7;
   }
   @media (max-width: 900px) {
     display: block;
     margin-left: -30px;
-    margin-bottom:15px;
+    margin-bottom:10px;
   }
 `;
 
