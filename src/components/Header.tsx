@@ -10,7 +10,7 @@ interface IUnderBarProps {
   short?: boolean; 
 }
 const HeaderWrapper = styled(motion.nav)`
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -18,26 +18,13 @@ const HeaderWrapper = styled(motion.nav)`
   height: 4rem;
   top: 0;
   font-size: 14px;
-
   background-color: ${props => props.theme.color.header};
   color: ${props => props.theme.color.text};
   z-index: 100;
 `;
 
 const LogoBox = styled.div`
- margin-right: 100px;
- @media (max-width: 900px) {
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-    width:100vw;
-    font-size:30px;
-    padding-left: 50px;
-    margin-bottom: 5px;
-    &:hover {
-      color: ${props => props.theme.color.text};
-    };
-  };
+  margin-right: 50px;
 `;
 
 const Logo = styled(Link)`
@@ -48,6 +35,17 @@ const Logo = styled(Link)`
   &:hover {
     color: #8f88d7;
   }
+  @media (max-width: 900px) {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    font-size:30px;
+    padding-left: 50px;
+    margin-bottom: 5px;
+    &:hover {
+      color: ${props => props.theme.color.text};
+    };
+  }
 `;
 
 const Nav = styled.ul`
@@ -57,7 +55,7 @@ const Nav = styled.ul`
   margin: 0;
   align-items: center;
   margin-left:10px;
-  width: 50%;
+  width: 60%;
   @media (max-width: 900px) {
     display: none;
   }

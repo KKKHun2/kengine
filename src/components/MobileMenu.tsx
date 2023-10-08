@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   margin-left :80px;
-  margin-right: 10px;
+  margin-right: 60px;
 `;
 
 const MenuIcon = styled.div`
@@ -17,7 +17,6 @@ const MenuIcon = styled.div`
   @media (max-width: 900px) {
     display: block;
     margin-left: -30px;
-    margin-bottom:10px;
   }
 `;
 
