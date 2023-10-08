@@ -30,7 +30,7 @@ const Logo = styled(Link)`
   font-weight: bold;
   color: ${props => props.theme.color.text};
   margin-left: -20px;
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     text-align: center;
     margin: 0 auto;
     display: block;
@@ -51,7 +51,7 @@ const Nav = styled.ul`
   display: flex;
   align-items: center;
   margin: 0;
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -84,17 +84,21 @@ const ExternalLink = styled.a`
   font-size: 18px;
   color: ${props => props.theme.color.text};
   padding: 10px 20px;
-  background-color: #8f88d7;
-  border: none;
-  border-radius: 8px;
   margin-right: 1rem;
   cursor: pointer;
+  background-color: #6354bb;
+  border: 3px solid #6354bb;
+  border-radius: 8px;
+  &:hover {
+    background-color: ${props => props.theme.color.background};
+    color: #8f88d7;
+  }
   transition: background-color 0.2s, color 0.2s;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -119,7 +123,7 @@ const DarkModeButton = styled.button`
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     margin-left: 70px;
     width: 2.8rem;
     height: 2.8rem;
@@ -187,7 +191,7 @@ const Header: React.FC = () => {
         <Logo to="/">KENGINE</Logo>
         <HeaderNav />
         <ExternalLink href="http://kengine.filmasfilm.com/" target="_blank" rel="noreferrer">
-          kengine
+          kengine OS 채팅웹
         </ExternalLink>
         <DarkModeButton onClick={handleChangeDarkMode}>
           {isDark ? 'DARK' : 'LIGHT'}

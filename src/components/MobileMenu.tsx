@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
@@ -13,7 +13,7 @@ const MenuIcon = styled.div`
   font-size: 34px;
   margin-right: -30px;
 
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     display: block;
     margin-left: -30px;
     margin-bottom:15px;
@@ -30,7 +30,7 @@ const MenuItems = styled.ul`
   &:hover {
     color: #8f88d7;
   }
-  @media (max-width > 844px) {
+  @media (min-width: 900px) {
     display: none;
   }
  
@@ -51,11 +51,6 @@ const MenuItem = styled.li`
   }
 `;
 
-const GlobalStyle = createGlobalStyle`
-  body.modal-open {
-    overflow: hidden;
-  }
-`;
 
 const ModalContainer = styled.div`
   display: none;
@@ -104,6 +99,29 @@ const CloseButton = styled.button`
   }
 `;
 
+const ExternalLink = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  color: ${props => props.theme.color.text};
+  padding: 10px 20px;
+  margin-right: 1rem;
+  margin-top:3rem;
+  cursor: pointer;
+  background-color: #6354bb;
+  border: 3px solid #6354bb;
+  border-radius: 8px;
+  &:hover {
+    background-color: ${props => props.theme.color.background};
+    color: #8f88d7;
+  }
+  transition: background-color 0.2s, color 0.2s;
+  &:hover {
+    background-color: ${props => props.theme.color.background};
+    color: #8f88d7;
+  }
+
+`;
 
 const MobileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -126,7 +144,7 @@ const MobileMenu = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 844) {
+      if (window.innerWidth > 900) {
         closeMenu();
       }
     };
@@ -147,6 +165,9 @@ const MobileMenu = () => {
         <ModalContent className={isMenuOpen ? 'open' : ''}>
           <CloseButton onClick={closeMenu}>&times;</CloseButton>
           <MenuItems>
+          <ExternalLink href="http://kengine.filmasfilm.com/" target="_blank" rel="noreferrer">
+                 kengine OS 채팅웹으로 바로가기
+              </ExternalLink>
             <MenuItem>
               <Link to="/side1">K엔진의 원리</Link>
             </MenuItem>
@@ -162,10 +183,12 @@ const MobileMenu = () => {
             <MenuItem>
               <Link to="/side4">국제입찰</Link>
             </MenuItem>
+  
+              
+  
           </MenuItems>
         </ModalContent>
       </ModalContainer>
-      <GlobalStyle />
     </>
   );
 };

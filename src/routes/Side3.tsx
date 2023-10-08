@@ -4,8 +4,7 @@ import styled from 'styled-components';
 const Overlay = styled.div`
   background-color: ${props => props.theme.color.background};
   color: ${props => props.theme.color.text};
-  padding: 50px;
-  min-height: 100vh;
+  padding: 180px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +12,9 @@ const Overlay = styled.div`
   margin-top: 30px;
   width: 100%;
   box-sizing: border-box;
+  @media (max-width: 900px) {
+    margin-top: 20px;
+  }
 `;
 
 const Container = styled.div`
@@ -27,10 +29,6 @@ const Container = styled.div`
   box-shadow: 0 0 10px ${props => props.theme.color.background};
   margin-bottom: 20px;
   box-sizing: border-box;
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
 `;
 
 const PageSection = styled.div`
@@ -41,6 +39,9 @@ const Title = styled.h1`
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -84,15 +85,15 @@ const TableCell = styled.td`
 const StyledLink = styled.a`
   text-decoration: none;
   color: #fff;
-  background-color: #6354bb;
-  border: 3px solid #6354bb;
-  border-radius: 10px;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   margin-top: 20px;
+  background-color: #6354bb;
+  border: 3px solid #6354bb;
+  border-radius: 10px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;

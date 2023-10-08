@@ -5,7 +5,7 @@ const Overlay = styled.div`
   background-color: ${props => props.theme.color.background};
   color: ${props => props.theme.color.text};
   padding: 50px;
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +13,9 @@ const Overlay = styled.div`
   margin-top: 50px;
   width: 100%; /* 화면 가로 너비를 100%로 설정 */
   box-sizing: border-box; /* padding과 border를 요소의 크기에 포함시킵니다. */
+  @media (max-width: 900px) {
+    margin-top:60px;
+  }
 `;
 
 const Container = styled.div`
@@ -28,7 +31,7 @@ const Container = styled.div`
   margin-bottom: 20px;
   box-sizing: border-box; 
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     width: 90%;
   }
 `;
@@ -41,7 +44,7 @@ const Title = styled.h1`
   font-weight: bold;
   text-align: left;
   margin: 20px 0px 20px 0; 
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     text-align: center;
   }
 `;
@@ -58,7 +61,7 @@ const Paragraph = styled.p`
 const Image = styled.img`
   max-width: 100%;
   height: auto;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 
 const PDFButton = styled.a`
@@ -66,14 +69,17 @@ const PDFButton = styled.a`
   font-weight: bold;
   font-size: 11px;
   color: ${props => props.theme.color.text};
-  padding: 10px 10px;
-  background-color: ${props => props.theme.color.header};
-  border: none;
-  border-radius: 10px;
+  padding: 13px 13px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
-
-  @media (max-width: 844px) {
+  background-color: #6354bb;
+  border: 3px solid #6354bb;
+  border-radius: 12px;
+  &:hover {
+    background-color: ${props => props.theme.color.background};
+    color: #8f88d7;
+  }
+  @media (max-width: 900px) {
     display: flex; 
     margin: 10px 0px; 
     width: fit-content;

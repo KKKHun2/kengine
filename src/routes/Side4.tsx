@@ -5,12 +5,12 @@ const Overlay = styled.div`
   background-color: ${props => props.theme.color.background};
   color: ${props => props.theme.color.text};
   padding: 50px;
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 45px;
   width: 100%;
   box-sizing: border-box;
 `;
@@ -26,8 +26,8 @@ const Container = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 10px ${props => props.theme.color.background};
   box-sizing: border-box;
-  @media (max-width: 768px) {
-    width: 90%;
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `;
 
@@ -36,8 +36,9 @@ const Title = styled.div`
   font-weight: bold;
   margin: 25px 10px;
   width: 100%;
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     text-align: center;
+    margin-top: 45px;
     min-width: 30%;
   }
 `;
@@ -138,7 +139,6 @@ const Styled = styled.div`
   display: flex;
   flex-direction: column; /* 기본적으로 모바일에서 세로로 배치되도록 설정 */
   align-items: center; /* 가운데 정렬 */
-
   width: 100%;
   @media (min-width: 844px) {
     flex-direction: row; /* 화면 너비가 768px 이상일 때 가로로 배치되도록 변경 */

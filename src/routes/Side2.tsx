@@ -6,14 +6,13 @@ const Overlay = styled.div`
   background-color: ${props => props.theme.color.background};
   color: ${props => props.theme.color.text};
   padding: 50px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top:45px;
   width: 100%; 
   box-sizing: border-box; 
+  margin-top:45px;
 `;
 
 const Container = styled.div`
@@ -27,11 +26,13 @@ const Container = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 10px ${props => props.theme.color.background};
   margin-bottom: 20px;
-  box-sizing: border-box; /* padding과 border를 요소의 크기에 포함시킵니다. */
-
-  @media (max-width: 768px) {
-    width: 90%; /* 화면이 작을 때 더 많은 여백을 주려면 가로 길이를 조절하세요. */
+  box-sizing: border-box; 
+  padding-bottom: 20%;
+  @media (max-width: 900px) {
+    width: 100%; 
+    margin-top:105px;
   }
+  
 `;
 
 
@@ -40,7 +41,7 @@ const Title = styled.div`
   font-weight: bold;
   margin: 25px 10px;
   width: 100%;
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     text-align: center; 
     min-width: 30%;/* 가운데로 정렬하고, 왼쪽 여백을 0으로 설정 */
   }
@@ -52,7 +53,7 @@ const Box = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  @media (max-width: 904px) {
+  @media (max-width: 900px) {
     flex-direction: column;
   }
 `;
@@ -74,7 +75,7 @@ const List = styled.ul`
   flex-grow: 1;
   height: 22rem; 
   flex-grow: 1;
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     flex-basis: calc(100% - 20px);
     margin-right: 0;
   }

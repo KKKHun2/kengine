@@ -17,8 +17,8 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 844px) {
-    flex-direction: column; /* 화면이 작아지면 세로로 배치합니다. */
+  @media (max-width: 900px) {
+    flex-direction: column; 
   }
 `;
 
@@ -29,11 +29,11 @@ const TextContainer = styled.div`
   text-align: left;
   font-size: 0.8rem;
   line-height: 1rem;
-  flex-shrink: 0; /* 화면이 작아져도 줄어들지 않도록 고정합니다. */
+  flex-shrink: 0; 
   margin-left:100px;
-  @media (max-width: 844px) {
-    text-align: center; /* 화면이 작아지면 텍스트 중앙 정렬합니다. */
-    font-size: 0.6rem; /* 글꼴 크기를 줄입니다. */
+  @media (max-width: 900px) {
+    text-align: center;
+    font-size: 0.6rem; 
     margin-left:0px;
   }
 `;
@@ -43,8 +43,8 @@ const TextColumn = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-left: 20px;
-  @media (max-width: 844px) {
-    align-items: center; /* 화면이 작아지면 텍스트 중앙 정렬합니다. */
+  @media (max-width: 900px) {
+    align-items: center; 
     
   }
 `;
@@ -54,15 +54,17 @@ const StyledLink = styled.a`
   display: inline-block;
   padding: 8px 10px;
   color: ${(props) => props.theme.color.text};
-  border-radius: 5px;
   transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.8rem; /* 글꼴 크기를 줄였습니다. */
+  font-size: 0.8rem; 
   font-weight: 400;
+  background-color: #6354bb;
+  border: 3px solid #6354bb;
+  border-radius: 8px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     display: none; 
   }
 `;
@@ -73,7 +75,7 @@ const Logo = styled.div`
   font-weight: bold;
   margin-bottom: 10px; 
   margin-right: 20px; 
-  @media (max-width: 844px) {
+  @media (max-width: 900px) {
     margin-right: 0; 
     margin-bottom: 5px; 
   }
