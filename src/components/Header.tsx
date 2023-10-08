@@ -40,7 +40,7 @@ const Logo = styled(Link)`
     margin: 0 auto;
     display: block;
     font-size:30px;
-    padding-left: 85px;
+    margin-left: 85px;
     margin-bottom: 5px;
     &:hover {
       color: ${props => props.theme.color.text};

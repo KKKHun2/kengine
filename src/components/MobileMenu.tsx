@@ -16,6 +16,7 @@ const MenuIcon = styled.div`
   @media (max-width: 900px) {
     display: block;
     margin-left: -30px;
+    margin-right: 5px;
   }
 `;
 

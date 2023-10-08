@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FooterWrapper = styled.div`
   background-color: ${props => props.theme.color.header};
   color: ${(props) => props.theme.color.text};
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
   width: 100%;
 `;
@@ -34,7 +34,7 @@ const TextContainer = styled.div`
   @media (max-width: 900px) {
     text-align: center;
     font-size: 0.2rem; 
-    margin-left:10px;
+    margin-left:0px;
   }
 `;
 
