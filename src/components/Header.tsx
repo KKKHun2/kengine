@@ -40,7 +40,7 @@ const Logo = styled(Link)`
     margin: 0 auto;
     display: block;
     font-size:30px;
-    padding-left: 50px;
+    padding-left: 85px;
     margin-bottom: 5px;
     &:hover {
       color: ${props => props.theme.color.text};
@@ -98,13 +98,13 @@ const DarkModeButton = styled.button`
   right: 20px;
   top: 50%;
   font-size: 12px;
-  margin-right:60px;
+  margin-right:50px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
   @media (max-width: 900px) {
-    margin-left: 50px;
+    margin-left: 30px;
     margin-right:50px;
     width: 2.8rem;
     height: 2.8rem;

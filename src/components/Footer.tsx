@@ -28,13 +28,13 @@ const TextContainer = styled.div`
   flex: 1;
   text-align: left;
   font-size: 0.8rem;
-  line-height: 1rem;
+  line-height: 1.1rem;
   flex-shrink: 0; 
   margin-left:100px;
   @media (max-width: 900px) {
     text-align: center;
-    font-size: 0.6rem; 
-    margin-left:0px;
+    font-size: 0.2rem; 
+    margin-left:10px;
   }
 `;
 

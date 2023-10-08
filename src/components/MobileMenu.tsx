@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
-  margin-left :80px;
-  margin-right: 60px;
+  margin: 0px 10px 5px 50px;
 `;
 
 const MenuIcon = styled.div`
