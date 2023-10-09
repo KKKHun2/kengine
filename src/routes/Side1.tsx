@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Overlay = styled.div`
@@ -10,17 +11,16 @@ const Overlay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  width: 100%; /* 화면 가로 너비를 100%로 설정 */
-  box-sizing: border-box; /* padding과 border를 요소의 크기에 포함시킵니다. */
+  width: 100%;
+  box-sizing: border-box; 
   @media (max-width: 900px) {
     margin-top:50px;
   }
 `;
 
 const Container = styled.div`
-  width: 70%; /* 내부 컨텐츠의 최대 너비를 설정 */
-  max-width: 1600px; /* 최대 너비 설정 */
+  width: 80%; 
+  max-width: 1600px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +39,13 @@ const Container = styled.div`
 
 const PageSection = styled.div`
 `;
+const PdfBox=styled.div`
+display:flex;
+flex-direction: row;
+@media (max-width: 900px) {
+  flex-direction: column;
+  }
+`
 const Title = styled.h1`
   font-size: 24px;
   font-weight: bold;
@@ -51,10 +58,10 @@ const Title = styled.h1`
 
 const Paragraph = styled.p`
   color: ${props => props.theme.color.text};
-  line-height: 1.6;
+  line-height: 2;
   margin-bottom: 1.5rem;
   margin-top:1rem;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
 `;
 
@@ -64,29 +71,31 @@ const Image = styled.img`
   margin-top: 30px;
 `;
 
-const PDFButton = styled.a`
+const PDFButton = styled(Link)`
+  display:flex;
   text-decoration: none;
+  margin-left: 30px;
+  align-items:center;
+  justify-content:center;
   font-weight: bold;
-  font-size: 11px;
-  color: ${props => props.theme.color.text};
-  padding: 13px 13px;
+  font-size: 13px;
+  padding: 3px 9px;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-  background-color: #6354bb;
-  border: 3px solid #6354bb;
+  transition: background-color 0.4s, color 0.2s;
   border-radius: 12px;
+  background: #fff;
+  border: 4px solid #6354bb;
+  color: #6354bb;
   &:hover {
     background-color: ${props => props.theme.color.background};
-    color: #8f88d7;
+    color: #6354bb;
   }
   @media (max-width: 900px) {
-    display: flex; 
-    margin: 10px 0px; 
-    width: fit-content;
-  }
-
-  &:hover {
-    color: #6354bb;
+    margin: 10px auto;
+    width: 50%;
+    padding:15px 10px;
+    justify-content:center;
+    align-items: center;
   }
 `;
 
@@ -117,8 +126,10 @@ const Side1: React.FC = () => {
       </Paragraph>
             </PageSection>
             <PageSection>
-              <Title>K엔진의 구체적 작동방식</Title>
-              <PDFButton href="./pdf/Kengine_whitepaper.pdf" target="_blank">K엔진 백서 다운로드</PDFButton>
+               <PdfBox>
+                <Title>K엔진의 구체적 작동방식</Title>
+                <PDFButton to="./pdf/Kengine_whitepaper.pdf">K엔진 구체적 작동방식 확인</PDFButton>
+              </PdfBox>
               <Image src="/image/image1.png" alt="Image" />
             </PageSection>
         </Container>

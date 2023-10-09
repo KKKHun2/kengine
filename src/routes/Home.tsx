@@ -22,7 +22,8 @@ const MainVideo = styled.div`
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  padding-top: 58%;
+  padding-top: 40%;
+  padding-bottom: 20%;
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -36,6 +37,13 @@ const MainVideo = styled.div`
   }
   @media (max-width: 900px) {
     padding-top: 130%;
+    margin-top: 50px; 
+    margin-bottom: 50px;
+  }
+
+  @media (min-height : 1350px) {
+    padding-top: 45%;
+    padding-bottom: 35%;
     margin-top: 50px; 
     margin-bottom: 50px;
   }

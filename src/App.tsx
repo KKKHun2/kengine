@@ -22,7 +22,7 @@ function App() {
       <Router>
         <Header />
           <Routes>
-          <Route path="/Side5" element={<Side5 />} />
+            <Route path="/Side5" element={<Side5 />} />
             <Route path="/Side4" element={<Side4 />} />
             <Route path="/Side3" element={<Side3 />} />
             <Route path="/Side2" element={<Side2 />} />

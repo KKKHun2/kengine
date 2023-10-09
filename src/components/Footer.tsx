@@ -54,7 +54,7 @@ const StyledLink = styled.a`
   text-decoration: none;
   display: inline-block;
   padding: 8px 10px;
-  color: ${(props) => props.theme.color.text};
+  color: #fff;
   transition: background-color 0.2s ease, color 0.2s ease;
   font-size: 0.8rem; 
   font-weight: 400;

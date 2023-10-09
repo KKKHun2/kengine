@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Container = styled.div`
   margin: 0px 10px 5px 50px;
@@ -37,36 +38,33 @@ const MenuItems = styled.ul`
 `;
 
 const MenuItem = styled.li`
-  margin-top:28px;
-  font-size: 17px;
+  margin-top: 28px;
+  font-size: 19px;
+  z-index: 9999;
   font-weight: bold;
   text-decoration: none;
   color: ${(props) => props.theme.color.text};
-  width:100%;
-  padding:10px;
-  border-top: 2px solid #fff; /* 상단 테두리 추가 */
-  border-bottom: 2px solid #fff; /* 하단 테두리 추가 */
+  width: 380px;
+  padding: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5); 
   &:hover {
     color: #8f88d7;
   }
 `;
 
-
 const ModalContainer = styled.div`
   display: none;
   position: fixed;
   top: 0;
-
   width: 100%;
   height: 100%;
-  background-color: rgba(71, 71, 71, 0.4);
   z-index: 9999;
   &.open {
     display: block;
   }
 `;
 
-const ModalContent = styled.div`
+const ModalContent = styled(motion.div)`
   position: fixed;
   top: 0;
   height: 100%;
@@ -78,10 +76,9 @@ const ModalContent = styled.div`
     left: 0;
   }
   display: flex;
-  flex-direction: column; /* 세로로 쌓이도록 설정 */
-  justify-content: space-between; /* 위 아래 여백 추가 */
-  padding: 40px; /* 내부 여백 추가 */
-  
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
 `;
 
 const CloseButton = styled.button`
@@ -98,8 +95,16 @@ const CloseButton = styled.button`
     color: #8f88d7;
   }
 `;
-
-
+const Overlay = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+   width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  z-index: 9990;
+`;
 
 const MobileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -111,7 +116,18 @@ const MobileMenu = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+  const menuVariants = {
+    open: { 
+      x: 0, 
+      transition: { duration: 0.3, ease: "easeOut" }
+    },
+    closed: { 
+      x: '-100%', 
+      transition: { duration: 0.3, ease: "easeIn" } 
+    },
+  };
 
+  
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('modal-open');
@@ -139,28 +155,64 @@ const MobileMenu = () => {
       <Container>
         <MenuIcon onClick={openMenu}>&#9776;</MenuIcon>
       </Container>
-      <ModalContainer className={isMenuOpen ? 'open' : ''} onClick={closeMenu}>
-        <ModalContent className={isMenuOpen ? 'open' : ''}>
-          <CloseButton onClick={closeMenu}>&times;</CloseButton>
-          <MenuItems>
-            <MenuItem>
-              <Link to="/side1">K엔진의 원리</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/side5">OS로서의 K엔진</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/side2">사업의 전개</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/side3">시사회</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/side4">국제입찰</Link>
-            </MenuItem>
-            </MenuItems>
-        </ModalContent>
-      </ModalContainer>
+      {isMenuOpen && (
+         <Overlay
+         onClick={closeMenu}
+         exit={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+       />
+      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <ModalContainer
+          variants={menuVariants}
+          initial="closed"
+          animate={isMenuOpen ? "open" : "closed"}
+          exit="closed"
+          className={isMenuOpen ? "open" : ""}
+          onClick={closeMenu}
+          as={motion.div}
+        >
+            <ModalContent
+               initial="closed"
+               animate={isMenuOpen ? "open" : "closed"}
+               exit="closed"
+               variants={menuVariants}
+               className={isMenuOpen ? "open" : ""}
+               onClick={closeMenu}
+            >
+              <CloseButton onClick={closeMenu}>&times;</CloseButton>
+              <MenuItems>
+               <Link to="/side1">
+                 <MenuItem>
+                  K엔진의 원리
+                 </MenuItem>
+                </Link>
+                <Link to="/side2">
+                 <MenuItem>
+                  OS로서의 K엔진
+                  </MenuItem>
+                </Link>
+                <Link to="/side3">
+                 <MenuItem>
+                 사업의 전개
+                 </MenuItem>
+                </Link>
+              <Link to="/side4"> 
+                <MenuItem>
+                시사회
+                </MenuItem>
+              </Link> 
+              <Link to="/side5">
+                <MenuItem>
+                  국제입찰
+                </MenuItem>
+              </Link>
+              </MenuItems>
+            </ModalContent>
+          </ModalContainer>
+        )}
+      </AnimatePresence>
     </>
   );
 };

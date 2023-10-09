@@ -1,3 +1,5 @@
+//k엔진 사이트 바로가기
+
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +9,7 @@ const Contatiner = styled.div`
     justify-content: center;
     align-items: center;
     padding:10px;
+    
 `
 const ExternalLink = styled(Link)`
   text-decoration: none;
@@ -18,12 +21,15 @@ const ExternalLink = styled(Link)`
   border: 3px solid #6354bb;
   border-radius: 8px;
   padding: 10px 20px;
-  margin-top:80px;
+  margin-top:25px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.4s, color 0.2s;
+  @media (max-width: 900px) {
+    margin-top:80px;
+  }
 `;
 
 
@@ -34,9 +40,9 @@ const KengineOs = () => {
     <>
     <Contatiner>
       <ExternalLink to="http://kengine.filmasfilm.com/" target="_blank">
-  kengine OS 채팅웹바로가기
-</ExternalLink>
-</Contatiner>
+        kengine OS 채팅웹바로가기
+      </ExternalLink>
+    </Contatiner>
     </>
   );
 };

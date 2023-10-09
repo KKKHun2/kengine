@@ -1,3 +1,5 @@
+//맨위에 헤더
+
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link, useMatch } from 'react-router-dom';
@@ -13,18 +15,26 @@ const HeaderWrapper = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+ 
   width: 100%;
   height: 4rem;
-  top: 0;
   font-size: 14px;
   background-color: ${props => props.theme.color.header};
   color: ${props => props.theme.color.text};
   z-index: 100;
+  @media (max-width: 900px) {
+    position: fixed;
+  top: 0;
+  }
 `;
 
 const LogoBox = styled.div`
-  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  @media (max-width: 900px) {
+    margin-left: 50px;
+  }
 `;
 
 const Logo = styled(Link)`
@@ -32,6 +42,7 @@ const Logo = styled(Link)`
   font-size: 24px;
   font-weight: bold;
   color: ${props => props.theme.color.text};
+  margin-left: 10px;
   &:hover {
     color: #8f88d7;
   }
@@ -39,26 +50,25 @@ const Logo = styled(Link)`
     text-align: center;
     margin: 0 auto;
     display: block;
-    font-size:30px;
-    margin-left: 85px;
+    font-size: 30px;
+    margin-left: 0;
     margin-bottom: 5px;
     &:hover {
       color: ${props => props.theme.color.text};
-    };
+    }
   }
 `;
 
 const Nav = styled.ul`
   list-style: none;
-  padding: 0;
   display: flex;
-  margin: 0;
   align-items: center;
-  margin-left:10px;
   width: 60%;
+  margin: 0 auto; 
   @media (max-width: 900px) {
     display: none;
   }
+  
 `;
 
 const NavItem = styled.li`
@@ -66,17 +76,14 @@ const NavItem = styled.li`
   color: ${props => props.theme.color.text};
   font-size: 1rem;
   font-weight: 400;
-   margin-right: 40px;
-  color: ${props => props.theme.color.text};;
+  flex: 1; 
+  color: ${props => props.theme.color.text};
   transition: color 0.3s ease-in-out;
   position: relative;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
   font-weight: 700;
-  &:last-child {
-    margin-right: 0;
-  }
   &:hover {
     color: #8f88d7;
   }
@@ -88,29 +95,38 @@ const DarkModeButton = styled.button`
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s ease;
-  background-color: ${props => props.theme.color.background};
-  color: ${props => props.theme.color.text};
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3.1rem;
-  right: 20px;
-  top: 50%;
+  width: 5.5rem;
+  height: 5.5rem;
   font-size: 12px;
-  margin-right:50px;
+  right: 20px;
+  background-color: ${props => props.theme.isDark === false ? '#FFD700' : '#999'}; 
+  color: ${props => props.theme.color.text};
+  z-index:9989;
   &:hover {
-    background-color: ${props => props.theme.color.background};
-    color: #8f88d7;
+    background-color: ${props => props.theme.isDark === false ? '#bba004' : '#555'};
+    color: ${props => props.theme.color.text};; 
   }
+
   @media (max-width: 900px) {
     margin-left: 30px;
-    margin-right:50px;
+    margin-right: 50px;
     width: 2.8rem;
     height: 2.8rem;
     font-size: 13px;
   }
+  @media (min-width: 901px) {
+    position: fixed;
+    bottom: 70px;
+    right: 25px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
+
+
 
 const UnderBar = styled(motion.div)<IUnderBarProps>`
   position: absolute;
@@ -131,6 +147,7 @@ const HeaderNav = () => {
   const side3 = useMatch("/side3");
   const side4 = useMatch("/side4");
   const side5 = useMatch("/side5");
+
   return (
     <Nav>
       <NavItem>
@@ -139,23 +156,23 @@ const HeaderNav = () => {
         </Link>
       </NavItem>
       <NavItem>
-        <Link to="/side5">
-          OS로서의 K엔진 {side5 && <UnderBar layoutId="underbar" />}
-        </Link>
-      </NavItem>
-      <NavItem>
         <Link to="/side2">
-          사업의 전개 {side2 && <UnderBar short layoutId="underbar" />}
+          OS로서의 K엔진 {side2 && <UnderBar layoutId="underbar" />}
         </Link>
       </NavItem>
       <NavItem>
         <Link to="/side3">
-          시사회 {side3 && <UnderBar short layoutId="underbar" />}
+          사업의 전개 {side3 && <UnderBar short layoutId="underbar" />}
         </Link>
       </NavItem>
       <NavItem>
         <Link to="/side4">
-          국제입찰{side4 && <UnderBar short layoutId="underbar" />}
+          시사회 {side4 && <UnderBar short layoutId="underbar" />}
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link to="/side5">
+          국제입찰{side5 && <UnderBar short layoutId="underbar" />}
         </Link>
       </NavItem>
     </Nav>
