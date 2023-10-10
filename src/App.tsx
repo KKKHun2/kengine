@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { darkTheme, lightTheme } from "./theme";
 import { DarkMode } from "./DarkMode";

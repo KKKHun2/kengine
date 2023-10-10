@@ -179,8 +179,6 @@ const Side5: React.FC = () => {
     <>
       <Overlay>
         <Container>
-          <div className='did'>12313213</div>
-          <p className='did2'>오늘도 쉬는날</p>
           <Title className="title">국제 입찰 방식</Title>
           <ButtonContainer>
             <TitleButton>시간</TitleButton><br /> 2023.10.24 (목) 14:00 <br />
