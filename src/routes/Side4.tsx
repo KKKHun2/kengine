@@ -39,9 +39,10 @@ const PageSection = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+   font-size: 24px;
   font-weight: bold;
-  margin: 20px 0;
+  text-align: left;
+  margin: 20px 0px 20px 0; 
   @media (max-width: 900px) {
     text-align: center;
   }
@@ -62,16 +63,19 @@ const Table = styled.table`
   margin-top: 20px;
   margin: 0 auto;
   table-layout: fixed;
+  padding:15px;
 `;
 
 const TableHeader = styled.th`
   background-color: ${props => props.theme.color.header};
   border: 1px solid #ccc;
-  padding: 15px;
+  padding: 25px;
   text-align: center;
   white-space: nowrap; 
   overflow: hidden; 
   text-overflow: ellipsis; 
+  font-size: 20px;
+  font-weight: 400;
 `;
 
 const TableRow = styled.tr`
@@ -83,14 +87,13 @@ const TableRow = styled.tr`
 
 const TableCell = styled.td`
   border: 1px solid #ccc;
+  padding: 25px;
   margin: 20px;
   text-align: center;
   white-space: nowrap; 
   overflow: hidden;
-  text-overflow: ellipsis; 
-  @media (max-width: 900px) {
-    font-size:10px;
-  }
+  text-overflow: ellipsis;
+  font-size: 18px; 
 `;
 
 const StyledLink = styled.a`
