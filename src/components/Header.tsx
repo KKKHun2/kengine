@@ -6,6 +6,8 @@ import { Link, useMatch } from 'react-router-dom';
 import { DarkMode } from '../DarkMode';
 import MobileMenu from './MobileMenu';
 import { motion } from "framer-motion";
+import { HiOutlineMoon } from 'react-icons/hi';
+import { PiSun } from 'react-icons/pi';
 
 interface IUnderBarProps {
   short?: boolean; 
@@ -14,7 +16,6 @@ const HeaderWrapper = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
   width: 100%;
   height: 4rem;
   font-size: 14px;
@@ -31,9 +32,8 @@ const HeaderWrapper = styled(motion.nav)`
 const LogoBox = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 10px;
   @media (max-width: 900px) {
-    margin-left: 50px;
+    margin-left:10px;
   }
 `;
 
@@ -51,7 +51,6 @@ const Logo = styled(Link)`
     margin: 0 auto;
     display: block;
     font-size: 30px;
-    margin-left: 0;
     margin-bottom: 5px;
     &:hover {
       color: ${props => props.theme.color.text};
@@ -91,33 +90,35 @@ const NavItem = styled.li`
   }
 `;
 
-const DarkModeButton = styled.button`
+const DarkMButton = styled.button`
+  display: none;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s ease;
-  display: none;
   align-items: center;
   justify-content: center;
-  background-color: ${props => props.theme.isDark === false ? '#FFD700' : '#999'}; 
-  color: ${props => props.theme.color.text};
-  z-index:9989;
-  &:hover {
-    background-color: ${props => props.theme.isDark === false ? '#bba004' : '#555'};
-    color: ${props => props.theme.color.text};; 
-  }
-
+  background-color: ${props => props.theme.isDark === true ?  '#807f7f':'#f3d113' };
+  color: #fff;
+  z-index: 9989;
   @media (max-width: 900px) {
-    margin-top:1px;
     display: flex;
-    margin-left: 30px;
-    margin-right: 40px;
+    margin-right: 35px;
     width: 2.8rem;
     height: 2.8rem;
     font-size: 13px;
   }
-  
 `; 
+
+
+const Icon = styled.div`
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${props => props.theme.color.text};
+`;
+
 
 const UnderBar = styled(motion.div)<IUnderBarProps>`
   position: absolute;
@@ -131,6 +132,17 @@ const UnderBar = styled(motion.div)<IUnderBarProps>`
   align-items: center;
   width: ${props => (props.short ? '50px' : '100px')};
 `;
+
+const DarkButton = () => {
+  const { handleChangeDarkMode, isDark } = useContext(DarkMode);
+
+  return (
+    <DarkMButton onClick={handleChangeDarkMode}>
+      <Icon>{isDark ? <HiOutlineMoon /> : <PiSun /> }</Icon>
+    </DarkMButton>
+  )
+}
+
 
 const HeaderNav = () => {
 
@@ -172,8 +184,6 @@ const HeaderNav = () => {
 };
 
 const Header: React.FC = () => {
-  const { handleChangeDarkMode, isDark } = useContext(DarkMode);
-
   return (
     <>
       <HeaderWrapper>
@@ -182,9 +192,7 @@ const Header: React.FC = () => {
           <Logo to="/">KENGINE</Logo>
         </LogoBox>
         <HeaderNav />
-        <DarkModeButton onClick={handleChangeDarkMode}>
-          {isDark ? 'DARK' : 'LIGHT'}
-        </DarkModeButton>
+        <DarkButton />
       </HeaderWrapper>
     </>
   );

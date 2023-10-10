@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Container = styled.div`
-  margin: 0px 10px 5px 50px;
+  margin: 0px 0px 5px 40px;
 `;
 
 const MenuIcon = styled.div`
@@ -16,8 +16,6 @@ const MenuIcon = styled.div`
   }
   @media (max-width: 900px) {
     display: block;
-    margin-left: -18px;
-    margin-right: 5px;
   }
 `;
 
