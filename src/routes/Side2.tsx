@@ -13,6 +13,7 @@ const Overlay = styled.div`
   box-sizing: border-box; 
   @media (max-width: 900px) {
     margin-top:50px;
+    padding: 15px;
   }
 `;
 
@@ -30,7 +31,7 @@ const Container = styled.div`
   box-sizing: border-box; 
 
   @media (max-width: 900px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 

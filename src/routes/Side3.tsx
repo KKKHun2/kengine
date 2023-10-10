@@ -12,15 +12,16 @@ const Overlay = styled.div`
   align-items: center;
   width: 100%; 
   box-sizing: border-box; 
+  @media (max-width: 900px) {
+    margin-top:45px;
+    padding: 15px;
+  }
   .tit{
     font-size: 1.2rem;
     font-weight: 400;
     @media (max-width: 900px) {
     margin-bottom : 15px ;
   }
-  }
-  @media (max-width: 900px) {
-    margin-top : 45px ;
   }
 `;
 

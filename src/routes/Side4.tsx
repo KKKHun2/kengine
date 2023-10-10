@@ -12,7 +12,8 @@ const Overlay = styled.div`
   width: 100%;
   box-sizing: border-box;
   @media (max-width: 900px) {
-    margin-top: 20px;
+    margin-top:50px;
+    padding: 15px;
   }
 `;
 
@@ -28,6 +29,9 @@ const Container = styled.div`
   box-shadow: 0 0 10px ${props => props.theme.color.background};
   margin-bottom: 20px;
   box-sizing: border-box;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const PageSection = styled.div`

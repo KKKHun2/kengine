@@ -12,7 +12,9 @@ const Overlay = styled.div`
   align-items: center;
   width: 100%;
   box-sizing: border-box;
- 
+  @media (max-width: 900px) {
+    padding: 15px;
+  }
 `;
 
 const Container = styled.div`
