@@ -11,7 +11,7 @@ import Side3 from "./routes/Side3";
 import Side4 from "./routes/Side4";
 import Home from "./routes/Home";
 import Side5 from "./routes/Side5";
-
+import DarkButton from "./components/DarkButton"
 
 
 
@@ -29,6 +29,7 @@ function App() {
             <Route path="/Side1" element={<Side1 />} />
             <Route path="/" element={<Home />} />
           </Routes>
+          <DarkButton />
         <Footer /> 
       </Router>
     </ThemeProvider>

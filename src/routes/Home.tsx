@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import KengineOs from '../components/KengineOs';
 import VideoPlayer from '../components/VideoPlayer';
 
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

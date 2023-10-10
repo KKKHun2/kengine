@@ -16,7 +16,7 @@ const MenuIcon = styled.div`
   }
   @media (max-width: 900px) {
     display: block;
-    margin-left: -30px;
+    margin-left: -18px;
     margin-right: 5px;
   }
 `;
@@ -46,9 +46,14 @@ const MenuItem = styled.li`
   color: ${(props) => props.theme.color.text};
   width: 380px;
   padding: 10px;
-  border-top: 2px solid rgba(255, 255, 255, 0.5); 
+  border-top: 2px solid ${(props) => props.theme.color.text};
+  transition: color 0.2s, transform 0.2s;
   &:hover {
     color: #8f88d7;
+    transform: scale(1.1);
+  }
+  @media (max-width: 650px) {
+    width: 180px;
   }
 `;
 
@@ -71,7 +76,7 @@ const ModalContent = styled(motion.div)`
   width: 65vw;
   background-color: ${(props) => props.theme.color.header};
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease-in-out;
+
   &.open {
     left: 0;
   }
@@ -79,6 +84,7 @@ const ModalContent = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
+
 `;
 
 const CloseButton = styled.button`
@@ -91,8 +97,10 @@ const CloseButton = styled.button`
   cursor: pointer;
   font-size: 40px;
   color: ${(props) => props.theme.color.text};
+  transition: color 0.2s, transform 0.2s;
   &:hover {
     color: #8f88d7;
+    transform: scale(1.5);
   }
 `;
 const Overlay = styled(motion.div)`

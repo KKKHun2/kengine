@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Overlay = styled.div`
   background-color: ${props => props.theme.color.background};
   color: ${props => props.theme.color.text};
-  padding: 20px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,18 +79,21 @@ const TableRow = styled.tr`
 
 const TableCell = styled.td`
   border: 1px solid #ccc;
-  padding: 25px;
+  margin: 20px;
   text-align: center;
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis; 
+  @media (max-width: 900px) {
+    font-size:10px;
+  }
 `;
 
 const StyledLink = styled.a`
   text-decoration: none;
   color: #fff;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 25px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;

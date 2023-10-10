@@ -26,12 +26,11 @@ const ExternalLink = styled(Link)`
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
   }
-  transition: background-color 0.4s, color 0.2s;
+  transition: background-color 0.5s, color 0.2s;
   @media (max-width: 900px) {
     margin-top:80px;
   }
 `;
-
 
 const KengineOs = () => {
   

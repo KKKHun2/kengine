@@ -12,6 +12,16 @@ const Overlay = styled.div`
   align-items: center;
   width: 100%; 
   box-sizing: border-box; 
+  .tit{
+    font-size: 1.2rem;
+    font-weight: 400;
+    @media (max-width: 900px) {
+    margin-bottom : 15px ;
+  }
+  }
+  @media (max-width: 900px) {
+    margin-top : 45px ;
+  }
 `;
 
 const Container = styled.div`
@@ -29,9 +39,7 @@ const Container = styled.div`
   padding-bottom: 20%;
   @media (max-width: 900px) {
     width: 100%; 
-
   }
-  
 `;
 
 
@@ -58,13 +66,13 @@ const Box = styled.div`
 `;
 
 const List = styled.ul`
-  flex-basis: calc(50% - 40px);
+  flex-basis: calc(50% - 40px); 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   background-color: ${props => props.theme.color.neutral};
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -82,6 +90,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   margin-bottom: 10px;
+  font-size: 18px;
 `;
 
 const Image = styled.img`

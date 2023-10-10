@@ -28,12 +28,7 @@ const Container = styled.div`
   box-sizing: border-box;
   @media (max-width: 900px) {
     width: 100%;
-  }
-  .did{
-    font-size:20px;
-  }
-  .did2{
-    color:red;
+    margin-top:30px;
   }
 `;
 
@@ -166,7 +161,8 @@ const StyledButton = styled.button`
   font-weight: 600;
   color: #6354bb;
   cursor: pointer;
-  margin: 25px auto; /* 수직, 수평 가운데 정렬을 위해 수정 */
+  margin: 25px auto;
+  transition: background-color 0.6s, color 0.2s;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;

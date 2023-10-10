@@ -6,7 +6,6 @@ const Overlay = styled.div`
   background-color: ${props => props.theme.color.background};
   color: ${props => props.theme.color.text};
   padding: 50px;
-  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +70,7 @@ const Image = styled.img`
   margin-top: 30px;
 `;
 
-const PDFButton = styled(Link)`
+const PDFButton = styled.button`
   display:flex;
   text-decoration: none;
   margin-left: 30px;
@@ -81,21 +80,24 @@ const PDFButton = styled(Link)`
   font-size: 13px;
   padding: 3px 9px;
   cursor: pointer;
-  transition: background-color 0.4s, color 0.2s;
   border-radius: 12px;
-  background: #fff;
   border: 4px solid #6354bb;
-  color: #6354bb;
   &:hover {
-    background-color: ${props => props.theme.color.background};
-    color: #6354bb;
+    color: #000000;
+    background: linear-gradient(to right, #fff 50%,#6354bb 45%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.6s;
   }
   @media (max-width: 900px) {
     margin: 10px auto;
     width: 50%;
     padding:15px 10px;
-    justify-content:center;
-    align-items: center;
+  }
+  @media (max-width: 515px) {
+    margin: 10px auto;
+    width: 80%;
+    padding:15px 10px;
   }
 `;
 
@@ -128,7 +130,9 @@ const Side1: React.FC = () => {
             <PageSection>
                <PdfBox>
                 <Title>K엔진의 구체적 작동방식</Title>
-                <PDFButton to="./pdf/Kengine_whitepaper.pdf">K엔진 구체적 작동방식 확인</PDFButton>
+                <PDFButton>
+                <Link to= "./pdf/Kengine_whitepaper.pdf">K엔진 구체적 작동방식 확인</Link> 
+                </PDFButton>
               </PdfBox>
               <Image src="/image/image1.png" alt="Image" />
             </PageSection>

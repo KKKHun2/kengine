@@ -7,7 +7,6 @@ import { DarkMode } from '../DarkMode';
 import MobileMenu from './MobileMenu';
 import { motion } from "framer-motion";
 
-
 interface IUnderBarProps {
   short?: boolean; 
 }
@@ -26,6 +25,7 @@ const HeaderWrapper = styled(motion.nav)`
     position: fixed;
   top: 0;
   }
+
 `;
 
 const LogoBox = styled.div`
@@ -62,13 +62,15 @@ const Logo = styled(Link)`
 const Nav = styled.ul`
   list-style: none;
   display: flex;
-  align-items: center;
   width: 60%;
   margin: 0 auto; 
   @media (max-width: 900px) {
     display: none;
   }
-  
+  @media (min-width: 1800px) {
+    align-items: left;
+    width: 40%;
+  }
 `;
 
 const NavItem = styled.li`
@@ -78,30 +80,25 @@ const NavItem = styled.li`
   font-weight: 400;
   flex: 1; 
   color: ${props => props.theme.color.text};
-  transition: color 0.3s ease-in-out;
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   font-weight: 700;
+  transition: color 0.2s, transform 0.2s;
   &:hover {
     color: #8f88d7;
+    transform: scale(1.1);
   }
 `;
 
 const DarkModeButton = styled.button`
-  padding: 10px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s ease;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  width: 5.5rem;
-  height: 5.5rem;
-  font-size: 12px;
-  right: 20px;
   background-color: ${props => props.theme.isDark === false ? '#FFD700' : '#999'}; 
   color: ${props => props.theme.color.text};
   z-index:9989;
@@ -111,28 +108,23 @@ const DarkModeButton = styled.button`
   }
 
   @media (max-width: 900px) {
+    margin-top:1px;
+    display: flex;
     margin-left: 30px;
-    margin-right: 50px;
+    margin-right: 40px;
     width: 2.8rem;
     height: 2.8rem;
     font-size: 13px;
   }
-  @media (min-width: 901px) {
-    position: fixed;
-    bottom: 70px;
-    right: 25px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-`;
-
-
+  
+`; 
 
 const UnderBar = styled(motion.div)<IUnderBarProps>`
   position: absolute;
   margin-top:7px;
   height: 2px;
   border-radius: 5px;
+  margin-left: -2px;
   background-color: ${props => props.theme.color.text};
   display: flex; 
   justify-content: center; 
@@ -162,7 +154,7 @@ const HeaderNav = () => {
       </NavItem>
       <NavItem>
         <Link to="/side3">
-          사업의 전개 {side3 && <UnderBar short layoutId="underbar" />}
+          사업의 전개 {side3 && <UnderBar  layoutId="underbar" />}
         </Link>
       </NavItem>
       <NavItem>
