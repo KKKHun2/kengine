@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SiNaver } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 
 const FooterWrapper = styled.div`
   background-color: ${props => props.theme.color.header};
@@ -49,7 +51,7 @@ const TextColumn = styled.div`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledButton = styled.button`
   text-decoration: none;
   display: inline-block;
   padding: 8px 10px;
@@ -57,9 +59,12 @@ const StyledLink = styled.a`
   transition: background-color 0.2s ease, color 0.2s ease;
   font-size: 0.8rem; 
   font-weight: 400;
-  background-color: #6354bb;
-  border: 3px solid #6354bb;
+  background-color: #269601;
+  border: 3px solid #1f7701;
   border-radius: 8px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
@@ -81,6 +86,12 @@ const Logo = styled.div`
   }
 `;
 
+const NaverIcon = styled(SiNaver)`
+  margin-right: 2px;
+  font-size: 15px;
+`;
+
+
 const Footer: React.FC = () => {
   return (
     <FooterWrapper>
@@ -97,9 +108,10 @@ const Footer: React.FC = () => {
             Copyright Kengine ©2023 All rights reserved
           </TextColumn>
         </TextContainer>
-        <StyledLink target="_blank" href="https://cafe.naver.com/gotificial">
+        <StyledButton as={Link} to="https://cafe.naver.com/gotificial">
+          <NaverIcon />
           게시판 바로가기
-        </StyledLink>
+        </StyledButton>
       </Container>
     </FooterWrapper>
   );
