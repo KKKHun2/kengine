@@ -12,7 +12,7 @@ const Overlay = styled.div`
   width: 100%;
   box-sizing: border-box;
   @media (max-width: 900px) {
-    margin-top:50px;
+    margin-top: 50px;
     padding: 15px;
   }
 `;
@@ -24,7 +24,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px ${props => props.theme.color.background};
   margin-bottom: 20px;
@@ -63,19 +63,22 @@ const Table = styled.table`
   margin-top: 20px;
   margin: 0 auto;
   table-layout: fixed;
-  padding:15px;
+  padding: 5px;
 `;
 
 const TableHeader = styled.th`
   background-color: ${props => props.theme.color.header};
   border: 1px solid #ccc;
-  padding: 25px;
+  padding: 10px;
   text-align: center;
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 20px;
   font-weight: 400;
+  @media (max-width: 900px) {
+    font-size: 10px;
+  }
 `;
 
 const TableRow = styled.tr`
@@ -85,15 +88,34 @@ const TableRow = styled.tr`
   }
 `;
 
-const TableCell = styled.td`
+const NarrowCell = styled.td`
   border: 1px solid #ccc;
-  padding: 25px;
+  padding: 20px;
   margin: 20px;
   text-align: center;
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 18px; 
+  font-size: 18px;
+  width: 10%;
+  @media (max-width: 900px) {
+    font-size: 10px;
+  }
+`;
+
+const WideCell = styled.td`
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 20px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  width: 70%; 
+  @media (max-width: 900px) {
+    font-size: 10px;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -129,54 +151,54 @@ const Side4: React.FC = () => {
             <Table>
               <thead>
                 <TableRow>
-                  <TableHeader>순서</TableHeader>
+                  <TableHeader className='t1'>순서</TableHeader>
                   <TableHeader>시간</TableHeader>
                   <TableHeader>발언자</TableHeader>
-                  <TableHeader>진행내용</TableHeader>
+                  <TableHeader className='t2'>진행내용</TableHeader>
                 </TableRow>
               </thead>
               <tbody>
                 <TableRow>
-                  <TableCell>1</TableCell>
-                  <TableCell>14:00</TableCell>
-                  <TableCell>&nbsp;</TableCell>
-                  <TableCell>개회</TableCell>
+                  <NarrowCell>1</NarrowCell>
+                  <NarrowCell>14:00</NarrowCell>
+                  <WideCell>&nbsp;</WideCell>
+                  <WideCell>개회</WideCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>2</TableCell>
-                  <TableCell>14:00</TableCell>
-                  <TableCell>사회자</TableCell>
-                  <TableCell>참가자 및 회사 소개</TableCell>
+                  <NarrowCell>2</NarrowCell>
+                  <NarrowCell>14:00</NarrowCell>
+                  <WideCell>사회자</WideCell>
+                  <WideCell>참가자 및 회사 소개</WideCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>3</TableCell>
-                  <TableCell>14:05</TableCell>
-                  <TableCell>변리사</TableCell>
-                  <TableCell>K엔진 특허 현황</TableCell>
+                  <NarrowCell>3</NarrowCell>
+                  <NarrowCell>14:05</NarrowCell>
+                  <WideCell>변리사</WideCell>
+                  <WideCell>K엔진 특허 현황</WideCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>4</TableCell>
-                  <TableCell>14:10</TableCell>
-                  <TableCell>법률고문 전병서</TableCell>
-                  <TableCell>K엔진 데이터</TableCell>
+                  <NarrowCell>4</NarrowCell>
+                  <NarrowCell>14:10</NarrowCell>
+                  <WideCell>법률고문 전병서</WideCell>
+                  <WideCell>K엔진 데이터</WideCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>5</TableCell>
-                  <TableCell>14:15</TableCell>
-                  <TableCell>대표이사 박종배</TableCell>
-                  <TableCell>K엔진 기술</TableCell>
+                  <NarrowCell>5</NarrowCell>
+                  <NarrowCell>14:15</NarrowCell>
+                  <WideCell>대표이사 박종배</WideCell>
+                  <WideCell>K엔진 기술</WideCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>6</TableCell>
-                  <TableCell>14:20</TableCell>
-                  <TableCell>&nbsp;</TableCell>
-                  <TableCell>질의응답</TableCell>
+                  <NarrowCell>6</NarrowCell>
+                  <NarrowCell>14:20</NarrowCell>
+                  <WideCell>&nbsp;</WideCell>
+                  <WideCell>질의응답</WideCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>7</TableCell>
-                  <TableCell>15:00</TableCell>
-                  <TableCell>&nbsp;</TableCell>
-                  <TableCell>폐회</TableCell>
+                  <NarrowCell>7</NarrowCell>
+                  <NarrowCell>15:00</NarrowCell>
+                  <WideCell>&nbsp;</WideCell>
+                  <WideCell>폐회</WideCell>
                 </TableRow>
               </tbody>
             </Table>
