@@ -60,7 +60,7 @@ const StyledButton = styled.button`
   font-size: 0.8rem; 
   font-weight: 400;
   background-color: #269601;
-  border: 3px solid #1f7701;
+  border: 3px solid #218400;
   border-radius: 8px;
   display: flex; 
   align-items: center; 
