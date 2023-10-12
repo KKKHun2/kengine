@@ -98,9 +98,13 @@ const DarkMButton = styled.button`
   transition: 0.2s ease;
   align-items: center;
   justify-content: center;
-  background-color: ${props => props.theme.isDark === true ?  '#807f7f':'#f3d113' };
+  background-color: ${props => props.theme.isDark === true ?  '#555':'#FFD700' };
   color: #fff;
   z-index: 9989;
+  &:hover {
+    background-color: ${props => props.theme.isDark === true ?  '#807f7f':'#a48d0b' };
+    color: ${props => props.theme.color.text};
+  }
   @media (max-width: 900px) {
     display: flex;
     margin-right: 35px;
