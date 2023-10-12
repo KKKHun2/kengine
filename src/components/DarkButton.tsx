@@ -17,11 +17,11 @@ const DarkMButton = styled.button`
   bottom: 100px; 
   width: 4.5rem;
   height: 4.5rem;
-  background-color: ${props => props.theme.isDark === true ?  '#555':'#a48d0b' };
+  background-color: ${props => props.theme.isDark === true ?  '#555':'#FFD700' };
   color: #fff;
   z-index: 9989;
   &:hover {
-    background-color: ${props => props.theme.isDark === true ?  '#807f7f':'#FFD700' };
+    background-color: ${props => props.theme.isDark === true ?  '#807f7f':'#a48d0b' };
     color: ${props => props.theme.color.text};
   }
   @media (max-width: 900px) {
