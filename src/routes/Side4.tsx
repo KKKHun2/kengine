@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Overlay = styled.div`
@@ -20,11 +21,11 @@ const Overlay = styled.div`
 const Container = styled.div`
   width: 80%;
   max-width: 1600px;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px ${props => props.theme.color.background};
   margin-bottom: 20px;
@@ -34,26 +35,28 @@ const Container = styled.div`
   }
 `;
 
-const PageSection = styled.div`
-  text-align: center;
-`;
-
-const Title = styled.h1`
-   font-size: 24px;
+const Title = styled.div`
+  font-size: 24px;
   font-weight: bold;
-  text-align: left;
-  margin: 20px 0px 20px 0; 
+  margin: 25px 10px;
+  width: 100%;
   @media (max-width: 900px) {
-    text-align: center;
+    text-align: center; 
+    min-width: 30%;
   }
 `;
-
 const Paragraph = styled.p`
-  font-size: 16px;
   color: ${props => props.theme.color.text};
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  margin-top: 1rem;
+  line-height: 2;
+  margin-bottom: 1rem;
+  margin-top:1rem;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: left;
+  @media (max-width: 900px) {
+    text-align: center; 
+    min-width: 30%;
+  }
 `;
 
 const Table = styled.table`
@@ -118,35 +121,41 @@ const WideCell = styled.td`
   }
 `;
 
-const StyledLink = styled.a`
-  text-decoration: none;
-  color: #fff;
-  display: inline-block;
-  padding: 10px 25px;
-  font-size: 16px;
-  font-weight: 600;
+const PDFButton = styled.button`
+  font-weight: bold;
+  width: 200px;
+  font-size: 13px;
+  margin-top: 30px;
+  padding: 15px 15px;
   cursor: pointer;
-  margin-top: 20px;
-  background-color: #6354bb;
-  border: 3px solid #6354bb;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 4px solid #6354bb;
   &:hover {
-    background-color: ${props => props.theme.color.background};
-    color: #8f88d7;
+    color: #000000;
+    background: linear-gradient(to right, #fff 50%, #6354bb 45%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.6s;
+  }
+  @media (max-width: 900px) {
+    width: 50%;
+    padding: 15px 10px;
+  }
+  @media (max-width: 515px) {
+    width: 80%;
+    padding: 15px 10px;
   }
 `;
+
 
 const Side4: React.FC = () => {
   return (
     <>
       <Overlay>
         <Container>
-          <PageSection>
             <Title>시사회</Title>
-            <Paragraph><span className="date_btn">일시</span> 2023.10.24 (목) 14:00</Paragraph>
-            <Paragraph><span className="date_btn">장소</span> 코리아나 호텔 7층 스테이트룸 (서울 중구 세종대로 135 코리아나호텔)</Paragraph>
-          </PageSection>
-          <PageSection>
+            <Paragraph><span className="date_btn">일시: </span> 2023.10.24 (목) 14:00</Paragraph>
+            <Paragraph><span className="date_btn">장소: </span> 코리아나 호텔 7층 스테이트룸 (서울 중구 세종대로 135 코리아나호텔)</Paragraph>
             <Title>행사내용</Title>
             <Table>
               <thead>
@@ -202,8 +211,9 @@ const Side4: React.FC = () => {
                 </TableRow>
               </tbody>
             </Table>
-            <StyledLink href="./Kengine_whitepaper.pdf" target="_blank">K엔진 백서 다운로드</StyledLink>
-          </PageSection>
+            <PDFButton>
+                <Link to= "./pdf/Kengine_whitepaper.pdf">K엔진 백서 다운로드</Link> 
+                </PDFButton>
         </Container>
       </Overlay>
     </>
