@@ -46,11 +46,16 @@ side3페이지는 기존화면에서는 2행2열로 그림이 크게 보이지�
 
 <img width="1000" alt="image" src="https://github.com/KKKHun2/kengine/assets/105702862/2bcfea33-92b4-4988-bfb8-4c8f77723b28">
 
-<img width="500" alt="image" src="https://github.com/KKKHun2/kengine/assets/105702862/4f599d86-81ab-4312-84cb-c99e92f8fc52">
+<img width="500" height="800" alt="image" src="https://github.com/KKKHun2/kengine/assets/105702862/4f599d86-81ab-4312-84cb-c99e92f8fc52">
 
 
   <br />
   <br />
+
+<img width="1000" alt="image" src="https://github.com/KKKHun2/kengine/assets/105702862/44326f3f-49ce-4f71-b50f-7bade99f64d8">
+
+<img width="500" height="800" alt="스크린샷 2023-10-17 오전 11 25 29" src="https://github.com/KKKHun2/kengine/assets/105702862/1233e03b-a60c-44fd-96a4-6d8938dd68c7">
+
 
  <h3> 모바일 헤더</h3>
  
