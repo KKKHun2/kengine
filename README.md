@@ -6,13 +6,18 @@
 
 
 
+
 ## 배포 링크
 https://kengine.vercel.app
 ## QR코드 :<br />
 
 <img src="https://github.com/KKKHun2/kengine/assets/105702862/60d0f476-e3c0-4ecb-a7f6-c6c509817ff9.png" alt="k엔진" width="250" height="250">
 
+## :date: Project period
 
+- 기간 : 2023.10.7 ~ 2023.10.11
+
+</br>
 
 
 # app 메인화면 (/)
