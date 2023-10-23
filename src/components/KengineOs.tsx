@@ -38,7 +38,7 @@ const KengineOs = () => {
   return (
     <>
     <Contatiner>
-      <ExternalLink to="http://kengine.filmasfilm.com/" target="_blank">
+      <ExternalLink to="http://kengine.filmasfilm.com/default_desktop.aspx" target="_blank">
         kengine OS 채팅웹바로가기
       </ExternalLink>
     </Contatiner>

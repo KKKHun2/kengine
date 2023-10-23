@@ -10,8 +10,6 @@ const HeaderWrapper = styled.div`
   .m {display:block}	
   }
 `;
-
-
 const VideoPlayer: React.FC = () => {
 
   return (
