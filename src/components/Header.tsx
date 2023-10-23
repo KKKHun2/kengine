@@ -172,7 +172,7 @@ const HeaderNav = () => {
       </NavItem>
       <NavItem >
         <Link to="/side4">
-          시사회 {side4 && <UnderBar layoutId="underbar" textLength={47} />}
+          시사회 {side4 && <UnderBar layoutId="underbar"/>}
         </Link>
       </NavItem>
       <NavItem className='HLast'>
