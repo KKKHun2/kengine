@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link, useMatch } from 'react-router-dom';
 import { DarkMode } from '../DarkMode';
@@ -26,10 +26,10 @@ const UnderBar = styled(motion.div)<IUnderBarProps>`
 
 const HeaderWrapper = styled(motion.nav)`
   display: flex;
-  justify-content: space between;
+  justify-content:space-between;
   align-items: center;
   width: 100%;
-  height: 4rem;
+  height: 6rem;
   font-size: 14px;
   background-color: ${props => props.theme.color.header};
   color: ${props => props.theme.color.text};
@@ -37,6 +37,7 @@ const HeaderWrapper = styled(motion.nav)`
   @media (max-width: 900px) {
     position: fixed;
     top: 0;
+    height: 5rem;
   }
 `;
 

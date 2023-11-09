@@ -9,6 +9,10 @@ const FooterWrapper = styled.div`
   padding: 10px 0;
   text-align: center;
   width: 100%;
+  height:5rem;
+  @media (max-width: 900px) {
+    height:8rem;
+  }
 `;
 
 const Container = styled.div`
@@ -32,6 +36,7 @@ const TextContainer = styled.div`
   line-height: 1.1rem;
   flex-shrink: 0; 
   margin-left:100px;
+  margin-top:10px;
   @media (max-width: 900px) {
     text-align: center;
     font-size: 0.2rem; 
@@ -65,6 +70,7 @@ const StyledButton = styled.button`
   display: flex; 
   align-items: center; 
   justify-content: center;
+  margin-top:10px;
   &:hover {
     background-color: ${props => props.theme.color.background};
     color: #8f88d7;
@@ -78,7 +84,7 @@ const Logo = styled.div`
   text-decoration: none;
   font-size: 18px; 
   font-weight: bold;
-  margin-bottom: 10px; 
+  margin-top:10px;
   margin-right: 20px; 
   @media (max-width: 900px) {
     margin-right: 0; 
