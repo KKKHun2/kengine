@@ -214,6 +214,11 @@ const MobileMenu = () => {
                   국제입찰
                 </MenuItem>
               </Link>
+              <Link to="https://cafe.naver.com/gotificial">
+                <MenuItem>
+                  네이버 게시판
+                </MenuItem>
+              </Link>
               </MenuItems>
             </ModalContent>
           </ModalContainer>
