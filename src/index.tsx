@@ -65,6 +65,9 @@ a {
   text-decoration:none;
   color:inherit;
 }
+.modal-open {
+    overflow: hidden;
+  }
 `;
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

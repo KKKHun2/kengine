@@ -82,7 +82,6 @@ const ModalContent = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
-
 `;
 
 const CloseButton = styled.button`
@@ -101,16 +100,18 @@ const CloseButton = styled.button`
     transform: scale(1.5);
   }
 `;
+
 const Overlay = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-   width: 100%;
+  width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.45);
   opacity: 0;
   z-index: 9990;
 `;
+
 
 const MobileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,11 +134,12 @@ const MobileMenu = () => {
     },
   };
 
-  
   useEffect(() => {
     if (isMenuOpen) {
+      document.documentElement.classList.add('modal-open');
       document.body.classList.add('modal-open');
     } else {
+      document.documentElement.classList.remove('modal-open');
       document.body.classList.remove('modal-open');
     }
   }, [isMenuOpen]);
@@ -162,63 +164,63 @@ const MobileMenu = () => {
         <MenuIcon onClick={openMenu}>&#9776;</MenuIcon>
       </Container>
       {isMenuOpen && (
-         <Overlay
-         onClick={closeMenu}
-         exit={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
-       />
+        <Overlay
+          onClick={closeMenu}
+          exit={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        />
       )}
       <AnimatePresence>
         {isMenuOpen && (
           <ModalContainer
-          variants={menuVariants}
-          initial="closed"
-          animate={isMenuOpen ? "open" : "closed"}
-          exit="closed"
-          className={isMenuOpen ? "open" : ""}
-          onClick={closeMenu}
-          as={motion.div}
-        >
+            variants={menuVariants}
+            initial="closed"
+            animate={isMenuOpen ? "open" : "closed"}
+            exit="closed"
+            className={isMenuOpen ? "open" : ""}
+            onClick={closeMenu}
+            as={motion.div}
+          >
             <ModalContent
-               initial="closed"
-               animate={isMenuOpen ? "open" : "closed"}
-               exit="closed"
-               variants={menuVariants}
-               className={isMenuOpen ? "open" : ""}
-               onClick={closeMenu}
+              initial="closed"
+              animate={isMenuOpen ? "open" : "closed"}
+              exit="closed"
+              variants={menuVariants}
+              className={isMenuOpen ? "open" : ""}
+              onClick={closeMenu}
             >
               <CloseButton onClick={closeMenu}>&times;</CloseButton>
               <MenuItems>
-               <Link to="/side1">
-                 <MenuItem>
-                  K엔진의 원리
-                 </MenuItem>
+                <Link to="/side1">
+                  <MenuItem>
+                    K엔진의 원리
+                  </MenuItem>
                 </Link>
                 <Link to="/side2">
-                 <MenuItem>
-                  OS로서의 K엔진
+                  <MenuItem>
+                    OS로서의 K엔진
                   </MenuItem>
                 </Link>
                 <Link to="/side3">
-                 <MenuItem>
-                 사업의 전개
-                 </MenuItem>
+                  <MenuItem>
+                    사업의 전개
+                  </MenuItem>
                 </Link>
-              <Link to="/side4"> 
-                <MenuItem>
-                시사회
-                </MenuItem>
-              </Link> 
-              <Link to="/side5">
-                <MenuItem>
-                  국제입찰
-                </MenuItem>
-              </Link>
-              <Link to="https://cafe.naver.com/gotificial">
-                <MenuItem>
-                  네이버 게시판
-                </MenuItem>
-              </Link>
+                <Link to="/side4"> 
+                  <MenuItem>
+                    시사회
+                  </MenuItem>
+                </Link> 
+                <Link to="/side5">
+                  <MenuItem>
+                    국제입찰
+                  </MenuItem>
+                </Link>
+                <Link to="https://cafe.naver.com/gotificial">
+                  <MenuItem>
+                    네이버 게시판
+                  </MenuItem>
+                </Link>
               </MenuItems>
             </ModalContent>
           </ModalContainer>
